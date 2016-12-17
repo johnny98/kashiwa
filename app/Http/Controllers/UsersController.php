@@ -8,15 +8,15 @@ use App\Http\Requests;
 
 use App\User;
 
+use Illuminate\Support\Facades\Input;
+
+
 class UsersController extends Controller
 {
    public function index()
     {
         //キーワード受け取り
         $keyword = \Input::get('keyword');
-        
-         //全件取得
-        $users = $query->get();
 
         //クエリ生成
         $query = User::query();
