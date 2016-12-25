@@ -26,6 +26,9 @@ class UsersController extends Controller
         {
             $query->where('email','like','%'.$keyword.'%')->orWhere('name','like','%'.$keyword.'%');
         }
+        
+        // del_flgが０の場合
+        $query->where('del_flg',0) ;
 
         //ページネーション
         $users = $query->orderBy('id','desc')->paginate(10);
