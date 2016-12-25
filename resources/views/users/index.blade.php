@@ -33,6 +33,7 @@
             <td>{{$user->id}}</td>
             <td>{{$user->name}}</td>
             <td>{{$user->email}}</td>
+            <td>{{$user->addr}}</td>
             <td><a href="/users/show/{{$user->id}}" class="btn btn-primary btn-sm">詳細</a></td>
             <td><a href="/users/edit/{{$user->id}}" class="btn btn-primary btn-sm">編集</a></td>
             <td>
