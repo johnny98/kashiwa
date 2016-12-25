@@ -28,6 +28,14 @@
             <!-- (最初の）エラーメッセージ表示 -->
             <span class="help-block">{{$errors->first('email')}}</span>
         </div>
+        
+                <!-- エラーがあるかどうかを判断して、has-errorクラスを追加 -->
+        <div class="form-group @if(!empty($errors->first('addr'))) has-error @endif">
+            <label>住所</label>
+            <input type="text" name="addr" value="{{Input::old('addr')}}" class="form-control">
+            <!-- (最初の）エラーメッセージ表示 -->
+            <span class="help-block">{{$errors->first('addr')}}</span>
+        </div>
 
         <input type="hidden" name="_token" value="{{csrf_token()}}">
 

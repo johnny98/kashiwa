@@ -23,6 +23,12 @@
             <input type="text" name="email" value="{{$user->email}}" class="form-control">
         </div>
 
+        <div class="form-group">
+            <label>住所</label>
+            <input type="text" name="addr" value="{{$user->addr}}" class="form-control">
+        </div>
+
+
         <input type="hidden" name="_token" value="{{csrf_token()}}">
 
         <input type="submit" value="更新" class="btn btn-primary">

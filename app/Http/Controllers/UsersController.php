@@ -24,7 +24,9 @@ class UsersController extends Controller
         //もしキーワードがあったら
         if(!empty($keyword))
         {
-            $query->where('email','like','%'.$keyword.'%')->orWhere('name','like','%'.$keyword.'%');
+            $query->where('email','like','%'.$keyword.'%')
+                  ->orWhere('name','like','%'.$keyword.'%')
+                  ->orWhere('addr','like','%'.$keyword.'%');
         }
         
         // del_flgが０の場合
@@ -53,6 +55,7 @@ class UsersController extends Controller
         $rules = [
             'name'=>'required',
             'email'=>'required|email|unique:users',
+            'addr'=>'required'
         ];
 
         $messages = [
@@ -60,6 +63,7 @@ class UsersController extends Controller
             'email.required'=>'emailは必須です。',
             'email.email'=>'emailの形式で入力して下さい。',
             'email.unique'=>'このemailは既に登録されています。',
+            'addr.required'=>'住所は必須です。',
         ];
 
         $validation = \Validator::make($inputs,$rules,$messages);
@@ -79,6 +83,7 @@ class UsersController extends Controller
         //値の登録
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->addr = $request->addr;
 
         //保存
         $user->save();
@@ -102,6 +107,7 @@ class UsersController extends Controller
         //値を代入
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->addr = $request->addr;
         //保存（更新）
         $user->save();
         //リダイレクト
