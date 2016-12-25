@@ -117,8 +117,9 @@ class UsersController extends Controller
     {
         //削除対象レコードを検索
         $user = User::find($id);
-        //削除
-        $user->delete();
+        //アップデート
+        $user->del_flg = 1;
+        $user->save();
         //リダイレクト
         return redirect()->to('/users');
     }
