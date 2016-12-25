@@ -15,16 +15,16 @@ class UsersController extends Controller
 {
    public function index()
     {
-        $query = User::query();
-        
         //キーワード受け取り
         $keyword = \Input::get('keyword');
 
-       //もしキーワードがあったら
+        //クエリ生成
+        $query = User::query();
+
+        //もしキーワードがあったら
         if(!empty($keyword))
         {
-            $query->where('name','like','%'.$keyword.'%');
-            $query->where('email','like','%'.$keyword.'%');
+            $query->where('email','like','%'.$keyword.'%')->orWhere('name','like','%'.$keyword.'%');
         }
 
         //ページネーション
