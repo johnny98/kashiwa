@@ -26,6 +26,12 @@
 
     <!-- table -->
     <table class="table table-striped">
+        <td>ID</td>
+        <td>名前</td>
+        <td>メールアドレス</td>
+        <td>住所</td>
+        <td>国籍</td>
+        <td><td></td></td><td></td>
 
     <!-- loop -->
     @foreach($users as $user)
@@ -34,6 +40,7 @@
             <td>{{$user->name}}</td>
             <td>{{$user->email}}</td>
             <td>{{$user->addr}}</td>
+            <td>{{$user->ctry}}</td>
             <td><a href="/users/show/{{$user->id}}" class="btn btn-primary btn-sm">詳細</a></td>
             <td><a href="/users/edit/{{$user->id}}" class="btn btn-primary btn-sm">編集</a></td>
             <td>

@@ -10,6 +10,7 @@ use App\User;
 
 use Illuminate\Support\Facades\Input;
 
+use Config;
 
 class UsersController extends Controller
 {
@@ -40,6 +41,8 @@ class UsersController extends Controller
     
         public function create()
     {
+        $ctry = Config::get('define.ctry');
+        
         //createに転送
         return view('users.create');
     }
@@ -55,7 +58,8 @@ class UsersController extends Controller
         $rules = [
             'name'=>'required',
             'email'=>'required|email|unique:users',
-            'addr'=>'required'
+            'addr'=>'required',
+            'ctry'=>'required'
         ];
 
         $messages = [
@@ -64,6 +68,7 @@ class UsersController extends Controller
             'email.email'=>'emailの形式で入力して下さい。',
             'email.unique'=>'このemailは既に登録されています。',
             'addr.required'=>'住所は必須です。',
+            'ctry.required'=>'国籍を選択してください。'
         ];
 
         $validation = \Validator::make($inputs,$rules,$messages);
@@ -84,6 +89,7 @@ class UsersController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->addr = $request->addr;
+        $user->ctry = $request->ctry;
 
         //保存
         $user->save();
@@ -108,6 +114,7 @@ class UsersController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->addr = $request->addr;
+        $user->ctry = $request->ctry;
         //保存（更新）
         $user->save();
         //リダイレクト
