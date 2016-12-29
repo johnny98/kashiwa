@@ -3813,3 +3813,15 @@
 [27-Dec-2016 15:40:41 UTC] PHP   8. Illuminate\Foundation\ProviderRepository->load() /home/ubuntu/workspace/kashiwa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:530
 [27-Dec-2016 15:40:41 UTC] PHP   9. Illuminate\Foundation\ProviderRepository->compileManifest() /home/ubuntu/workspace/kashiwa/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php:60
 [27-Dec-2016 15:40:41 UTC] PHP  10. Illuminate\Foundation\ProviderRepository->createProvider() /home/ubuntu/workspace/kashiwa/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php:114
+[29-Dec-2016 03:26:16 UTC] PHP Fatal error:  Class 'Illuminate\Html\HtmlServiceProvider' not found in /home/ubuntu/workspace/kashiwa/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php on line 146
+[29-Dec-2016 03:26:16 UTC] PHP Stack trace:
+[29-Dec-2016 03:26:16 UTC] PHP   1. {main}() /home/ubuntu/workspace/kashiwa/public/index.php:0
+[29-Dec-2016 03:26:16 UTC] PHP   2. Illuminate\Foundation\Http\Kernel->handle() /home/ubuntu/workspace/kashiwa/public/index.php:54
+[29-Dec-2016 03:26:16 UTC] PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /home/ubuntu/workspace/kashiwa/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:99
+[29-Dec-2016 03:26:16 UTC] PHP   4. Illuminate\Foundation\Http\Kernel->bootstrap() /home/ubuntu/workspace/kashiwa/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:127
+[29-Dec-2016 03:26:16 UTC] PHP   5. Illuminate\Foundation\Application->bootstrapWith() /home/ubuntu/workspace/kashiwa/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:232
+[29-Dec-2016 03:26:16 UTC] PHP   6. Illuminate\Foundation\Bootstrap\RegisterProviders->bootstrap() /home/ubuntu/workspace/kashiwa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:203
+[29-Dec-2016 03:26:16 UTC] PHP   7. Illuminate\Foundation\Application->registerConfiguredProviders() /home/ubuntu/workspace/kashiwa/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php:17
+[29-Dec-2016 03:26:16 UTC] PHP   8. Illuminate\Foundation\ProviderRepository->load() /home/ubuntu/workspace/kashiwa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:530
+[29-Dec-2016 03:26:16 UTC] PHP   9. Illuminate\Foundation\ProviderRepository->compileManifest() /home/ubuntu/workspace/kashiwa/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php:60
+[29-Dec-2016 03:26:16 UTC] PHP  10. Illuminate\Foundation\ProviderRepository->createProvider() /home/ubuntu/workspace/kashiwa/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php:114

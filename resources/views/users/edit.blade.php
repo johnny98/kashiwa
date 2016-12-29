@@ -30,14 +30,8 @@
         
         <div class="form-group">
             <label>国籍</label>
-<select name="ctry">
-  <option value="">--未選択--</option>
-  <option value="ko">韓国</option>
-  <option value="en">アメリカ合衆国</option>
-  <option value="ja">日本</option>
-  <option value="ch">中国</option>
-  <option value="ma">マレーシア</option>
-</select>        </div>
+            {{Form::select('ctry',\Config::get(define.ctry))}}
+        </div>
 
 
         <input type="hidden" name="_token" value="{{csrf_token()}}">
