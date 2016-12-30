@@ -29,6 +29,13 @@
         </div>
 
 
+ <div class="form-group">
+            <label>国籍</label>
+            {{Form::select('ctry',
+            \Config::get('define.ctry'), null
+            )}}
+        </div>
+
         <input type="hidden" name="_token" value="{{csrf_token()}}">
 
         <input type="submit" value="更新" class="btn btn-primary">
