@@ -147,7 +147,6 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Illuminate\Html\HtmlServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -156,6 +155,9 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        
+        // add
+        Collective\Html\HtmlServiceProvider::class, 
 
     ],
 
@@ -203,8 +205,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Input' => Illuminate\Support\Facades\Input::class,
-        'Form'=> Illuminate\Html\FormFacade::class, 
-        'Html'=> Illuminate\Html\HtmlFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class, //add
+        'Form' => Collective\Html\FormFacade::class, //add
 
     ],
 

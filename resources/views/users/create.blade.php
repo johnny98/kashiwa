@@ -40,7 +40,7 @@
         <div class="form-group @if(!empty($errors->first('ctry'))) has-error @endif">
             <label>国籍</label>
             {{Form::select('ctry',
-            \Config::get('define.ctry')
+            \Config::get('define.ctry'), null
             )}}
             <!-- (最初の）エラーメッセージ表示 -->
             <span class="help-block">{{$errors->first('ctry')}}</span>

@@ -5,11 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-
 use App\User;
 
 use Illuminate\Support\Facades\Input;
-
 
 class UsersController extends Controller
 {
@@ -40,7 +38,7 @@ class UsersController extends Controller
     
         public function create()
     {
-        $ctry = Config::get('define.ctry');
+        $ctry = \Config::get('define.ctry');
         //createに転送
         return view('users.create');
     }
