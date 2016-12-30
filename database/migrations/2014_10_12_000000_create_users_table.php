@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('addr');
+            $table->enum('ctry',['','en','ko','ja','ch','ma']);
             $table->string('password');
             $table->tinyinteger('del_flg');
             $table->rememberToken();

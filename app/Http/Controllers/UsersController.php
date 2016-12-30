@@ -40,6 +40,7 @@ class UsersController extends Controller
     
         public function create()
     {
+        $ctry = Config::get('define.ctry');
         //createに転送
         return view('users.create');
     }

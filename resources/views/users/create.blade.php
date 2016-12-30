@@ -36,6 +36,16 @@
             <!-- (最初の）エラーメッセージ表示 -->
             <span class="help-block">{{$errors->first('addr')}}</span>
         </div>
+        
+        <div class="form-group @if(!empty($errors->first('ctry'))) has-error @endif">
+            <label>国籍</label>
+            {{Form::select('ctry',
+            \Config::get('define.ctry')
+            )}}
+            <!-- (最初の）エラーメッセージ表示 -->
+            <span class="help-block">{{$errors->first('ctry')}}</span>
+        </div>
+         
 
         <input type="hidden" name="_token" value="{{csrf_token()}}">
 
