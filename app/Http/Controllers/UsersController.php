@@ -30,6 +30,14 @@ class UsersController extends Controller
         
         // del_flgが０の場合
         $query->where('del_flg',0) ;
+        
+        // $query->Form::select(array (
+        //     ''=>'',
+        //     "ko"=>"韓国",
+        //     "en"=>"アメリカ合衆国",
+        //     "jp"=>"日本",
+        //     "ch"=>"中国",
+        //     "ma"=>"マレーシア",));
 
         //ページネーション
         $users = $query->orderBy('id','desc')->paginate(10);

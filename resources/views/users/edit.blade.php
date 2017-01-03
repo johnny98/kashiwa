@@ -32,7 +32,7 @@
  <div class="form-group">
             <label>国籍</label>
             {{Form::select('ctry',
-            \Config::get('define.ctry'), null
+            \Config::get('define.ctry')
             )}}
         </div>
 
