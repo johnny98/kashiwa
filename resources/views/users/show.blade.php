@@ -16,7 +16,7 @@
         <tr><td>名前</td><td>{{$user->name}}</tr>
         <tr><td>E-Mail</td><td>{{$user->email}}</tr>
         <tr><td>住所</td><td>{{$user->addr}}</tr>
-        <tr><td>国籍</td><td>{{$user->ctry}}</tr>
+        <tr><td>国籍</td><td>{{$user->ctry)}}</tr>
     </table>
 
 @stop
