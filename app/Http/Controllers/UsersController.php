@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+
 use App\User;
 
 use Illuminate\Support\Facades\Input;
@@ -18,6 +19,8 @@ class UsersController extends Controller
 
         //クエリ生成
         $query = User::query();
+        
+        $country = Config('define.ctry');
 
         //もしキーワードがあったら
         if(!empty($keyword))
@@ -34,7 +37,8 @@ class UsersController extends Controller
         //ページネーション
         $users = $query->orderBy('id','desc')->paginate(10);
         return view('users.index')->with('users',$users)
-                                  ->with('keyword',$keyword);
+                                  ->with('keyword',$keyword)
+                                  ->with('country',$country);
     }
     
         public function create()
@@ -122,8 +126,12 @@ class UsersController extends Controller
     {
         //レコードを検索
         $user = User::find($id);
+        $country = Config('define.ctry');
+        // dd($country);
         //検索結果をビューに渡す
-        return view('users.show')->with('user',$user);
+        return view('users.show')
+        ->with('user',$user)
+        ->with('country',$country);
     }
     
         public function destroy($id)
