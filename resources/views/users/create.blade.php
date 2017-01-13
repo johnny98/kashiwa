@@ -44,7 +44,24 @@
             )}}
 <span class="help-block">{{$errors->first('ctry')}}</span>
         </div>
-
+        
+        <!-- エラーがあるかどうかを判断して、has-errorクラスを追加 -->
+        <div class="form-group @if(!empty($errors->first('name'))) has-error @endif">
+            <label>性別</label><br>
+            男性{{Form::radio('gender', '男性')}}
+            女性{{Form::radio('gender', '女性')}}
+            <!-- (最初の）エラーメッセージ表示 -->
+            <span class="help-block">{{$errors->first('name')}}</span>
+        </div>
+        
+        <div class="form-group @if(!empty($errors->first('ctry'))) has-error @endif">
+            <label>年齢</label><br>
+            {{Form::select('age',
+            \Config::get('define.age'), null
+            )}}
+<span class="help-block">{{$errors->first('age')}}</span>
+        </div>
+        
         <input type="hidden" name="_token" value="{{csrf_token()}}">
 
         <input type="submit" value="登録" class="btn btn-primary">

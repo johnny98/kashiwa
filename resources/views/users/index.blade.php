@@ -31,6 +31,8 @@
         <td>メールアドレス</td>
         <td>住所</td>
         <td>国籍</td>
+        <td>性別</td>
+        <td>年齢</td>
         <td></td><td></td><td></td>
 
     <!-- loop -->
@@ -41,6 +43,8 @@
             <td>{{$user->email}}</td>
             <td>{{$user->addr}}</td>
             <td>{{$country[$user->ctry]}}</td>
+            <td>{{$user->gender}}</td>
+            <td>{{$age[$user->age]}}</td>
             <td><a href="/users/show/{{$user->id}}" class="btn btn-primary btn-sm">詳細</a></td>
             <td><a href="/users/edit/{{$user->id}}" class="btn btn-primary btn-sm">編集</a></td>
             <td>

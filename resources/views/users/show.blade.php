@@ -17,6 +17,8 @@
         <tr><td>E-Mail</td><td>{{$user->email}}</tr>
         <tr><td>住所</td><td>{{$user->addr}}</tr>
         <tr><td>国籍</td><td>{{$country[$user->ctry]}}</tr>
+        <tr><td>性別</td><td>{{$user->gender}}</td></tr>
+        <tr><td>年齢</td><td>{{$age[$user->age]}}</tr>
     </table>
 
 @stop

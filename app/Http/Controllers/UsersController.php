@@ -21,6 +21,8 @@ class UsersController extends Controller
         $query = User::query();
         
         $country = Config('define.ctry');
+        
+        $age = Config('define.age');
 
         //もしキーワードがあったら
         if(!empty($keyword))
@@ -28,7 +30,8 @@ class UsersController extends Controller
             $query->where('email','like','%'.$keyword.'%')
                   ->orWhere('name','like','%'.$keyword.'%')
                   ->orWhere('addr','like','%'.$keyword.'%')
-                  ->orWhere('ctry','like','%'.$keyword.'%');
+                  ->orWhere('ctry','like','%'.$keyword.'%')
+                  ->orWhere('gendr','like','%'.$keyword.'%');
         }
         
         // del_flgが０の場合
@@ -38,12 +41,16 @@ class UsersController extends Controller
         $users = $query->orderBy('id','desc')->paginate(10);
         return view('users.index')->with('users',$users)
                                   ->with('keyword',$keyword)
-                                  ->with('country',$country);
+                                  ->with('country',$country)
+                                  ->with('age',$age);
     }
     
         public function create()
     {
         $ctry = \Config::get('define.ctry');
+        
+        $age = \Config::get('define.age');
+        
         //createに転送
         return view('users.create');
     }
@@ -88,9 +95,11 @@ class UsersController extends Controller
 
         //値の登録
         $user->name = $request->name;
+        $user->gender = $request->gender;
         $user->email = $request->email;
         $user->addr = $request->addr;
         $user->ctry = $request->ctry;
+        $user->age = $request->age;
 
         //保存
         $user->save();
@@ -113,11 +122,15 @@ class UsersController extends Controller
         $user = User::find($id);
         //値を代入
         $user->name = $request->name;
+        $user->gender = $request->gender;
         $user->email = $request->email;
         $user->addr = $request->addr;
         $user->ctry = $request->ctry;
+        $user->age = $request->age;
+        
         //保存（更新）
         $user->save();
+        
         //リダイレクト
         return redirect()->to('/users');
     }
@@ -126,12 +139,17 @@ class UsersController extends Controller
     {
         //レコードを検索
         $user = User::find($id);
+        
         $country = Config('define.ctry');
+        
+        $age = Config('define.age');
+        
         // dd($country);
         //検索結果をビューに渡す
         return view('users.show')
         ->with('user',$user)
-        ->with('country',$country);
+        ->with('country',$country)
+        ->with('age',$age);
     }
     
         public function destroy($id)

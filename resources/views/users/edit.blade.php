@@ -35,6 +35,19 @@
             \Config::get('define.ctry'),$user->ctry
             )}}
         </div>
+        
+        <div class="form-group">
+            <label>性別</label>
+            男性{{Form::radio('gender', '男性')}}
+            女性{{Form::radio('gender', '女性')}}
+        </div>
+        
+        <div class="form-group">
+            <label>年齢</label>
+            {{Form::select('age',
+            \Config::get('define.age'),$user->age
+            )}}
+        </div>
 
         <input type="hidden" name="_token" value="{{csrf_token()}}">
 
